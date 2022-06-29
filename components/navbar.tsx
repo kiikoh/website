@@ -1,15 +1,18 @@
 import {useState} from 'react';
 import clsx from 'clsx';
+import NextLink from 'next/link';
 
 const Navbar: React.FC = () => {
 	const [isOpen, setIsOpen] = useState(false);
 
 	return (
-		<nav className='bg-white shadow dark:bg-gray-800'>
+		<nav className='bg-white shadow-lg shadow-red-500 dark:shadow-red-400 dark:bg-gray-800 w-full'>
 			<div className='container px-6 py-3 mx-auto md:flex'>
 				<div className='flex items-center justify-between'>
 					<div>
-						<a className='text-2xl font-bold text-gray-800 transition-colors duration-200 transform dark:text-white lg:text-3xl hover:text-gray-700 dark:hover:text-gray-300' href='#'>KiiKoh</a>
+						<NextLink href='/'>
+							<a className='text-2xl font-bold text-gray-800 transition-colors duration-200 transform dark:text-white lg:text-3xl hover:text-gray-700 dark:hover:text-gray-300' href='#'>KiiKoh</a>
+						</NextLink>
 					</div>
 					{/* Mobile menu button */}
 					<div className='flex md:hidden'>
@@ -26,10 +29,15 @@ const Navbar: React.FC = () => {
 				{/* Mobile Menu open: "block", Menu closed: "hidden" */}
 				<div className={clsx(['w-full md:flex md:items-center md:justify-between', !isOpen && 'hidden'])}>
 					<div className='flex flex-col px-2 py-3 -mx-4 md:flex-row md:mx-0 md:py-0'>
-						<a href='#' className='px-2 py-1 text-sm font-medium text-gray-700 transition-colors duration-200 transform rounded dark:text-gray-200 hover:bg-gray-900 hover:text-gray-100 md:mx-2'>Home</a>
-						<a href='#' className='px-2 py-1 text-sm font-medium text-gray-700 transition-colors duration-200 transform rounded dark:text-gray-200 hover:bg-gray-900 hover:text-gray-100 md:mx-2'>Experience</a>
-						<a href='#' className='px-2 py-1 text-sm font-medium text-gray-700 transition-colors duration-200 transform rounded dark:text-gray-200 hover:bg-gray-900 hover:text-gray-100 md:mx-2'>Projects</a>
-						<a href='#' className='px-2 py-1 text-sm font-medium text-gray-700 transition-colors duration-200 transform rounded dark:text-gray-200 hover:bg-gray-900 hover:text-gray-100 md:mx-2'>Contact</a>
+						<NextLink href='/'>
+							<a className='px-2 py-1 text-sm font-medium text-gray-700 transition-colors duration-200 transform rounded dark:text-gray-200 hover:bg-gray-900 hover:text-gray-100 md:mx-2'>Home</a>
+						</NextLink>
+						<NextLink href='/projects'>
+							<a className='px-2 py-1 text-sm font-medium text-gray-700 transition-colors duration-200 transform rounded dark:text-gray-200 hover:bg-gray-900 hover:text-gray-100 md:mx-2'>Projects</a>
+						</NextLink>
+						<NextLink href='/contact'>
+							<a className='px-2 py-1 text-sm font-medium text-gray-700 transition-colors duration-200 transform rounded dark:text-gray-200 hover:bg-gray-900 hover:text-gray-100 md:mx-2'>Contact</a>
+						</NextLink>
 					</div>
 					<div className='relative'>
 						<span className='absolute inset-y-0 left-0 flex items-center pl-3'>

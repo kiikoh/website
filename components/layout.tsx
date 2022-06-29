@@ -6,15 +6,14 @@ interface LayoutProps {
 }
 
 const Layout: React.FC<LayoutProps> = ({children}: LayoutProps) => (
-	<div>
+	<div className='bg-gray-200 dark:bg-gray-800'>
 		<Head>
-			<title>KiiKoh | Kyle DePace</title>
+			<title>Kyle DePace | KiiKoh</title>
 			<meta name='description' content='Personal Portfolio of Kyle DePace' />
 			<link rel='icon' href='/favicon.ico' />
 		</Head>
-
 		<Navbar />
-		<div className='container mx-auto'>
+		<div className='container mx-auto bg-gray-100 dark:bg-gray-700 min-h-screen m-4 p-8 shadow-lg rounded-lg'>
 			{children}
 		</div>
 	</div>
