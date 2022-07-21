@@ -14,10 +14,10 @@ const Home: NextPage = () => (
 				<h2 className='text-3xl font-bold tracking-tight text-gray-800 xl:text-4xl dark:text-white'>
 					Kyle DePace
 				</h2>
-				<p className='block max-w-2xl mt-4 text-xl text-gray-500 dark:text-gray-300'>is a Computer-Science Major and Rower from Marist College, looking for work as a full-stack developer</p>
+				<p className='block max-w-2xl mt-4 text-xl text-gray-500 dark:text-gray-300'>is a Computer-Science Major and Student-Athlete from Marist College, looking for work as a full-stack developer</p>
 				<div className='mt-6 sm:-mx-2'>
 					<div className='inline-flex w-full overflow-hidden rounded-lg shadow sm:w-auto sm:mx-2'>
-						<a href='#' className='group inline-flex items-center justify-center w-full px-5 py-3 text-base font-medium text-white bg-gradient-to-r from-gray-700 to-gray-900 hover:from-gray-600 hover:to-gray-600 sm:w-auto'>
+						<a target='_blank' href='/KyleDePaceResume.pdf' className='group inline-flex items-center justify-center w-full px-5 py-3 text-base font-medium text-white bg-gradient-to-r from-gray-700 to-gray-900 hover:from-gray-600 hover:to-gray-600 sm:w-auto'>
 							<svg className='transition-all delay-50 duration-300 scale-x-[-1] -rotate-180 group-hover:rotate-180  w-6 h-6 mx-2 fill-current' xmlns='http://www.w3.org/2000/svg' xmlnsXlink='http://www.w3.org/1999/xlink' version='1.1' id='Capa_1' x='0px' y='0px' viewBox='0 0 325 325' xmlSpace='preserve'>
 								<g>
 									<path d='M275.291,0H49.709c-3.314,0-6,2.687-6,6v313c0,3.314,2.686,6,6,6h168.024v-59.075c0-4.418,3.582-8,8-8h55.558V6   C281.291,2.687,278.604,0,275.291,0z' />
@@ -30,7 +30,7 @@ const Home: NextPage = () => (
 						</a>
 					</div>
 					<div className='inline-flex w-full mt-4 overflow-hidden rounded-lg shadow sm:w-auto sm:mx-2'>
-						<a href='#' className='group inline-flex items-center justify-center w-full px-5 py-3 text-base font-medium text-white bg-gradient-to-r from-gray-700 to-gray-900 hover:from-gray-600 hover:to-gray-600 sm:w-auto'>
+						<a target='_blank' href='https://www.linkedin.com/in/kyledepace/' className='group inline-flex items-center justify-center w-full px-5 py-3 text-base font-medium text-white bg-gradient-to-r from-gray-700 to-gray-900 hover:from-gray-600 hover:to-gray-600 sm:w-auto' rel='noreferrer'>
 							<svg className='transition-all delay-50 duration-300 rotate-0 group-hover:rotate-[360deg] w-6 h-6 mx-2 fill-current' xmlns='http://www.w3.org/2000/svg' xmlnsXlink='http://www.w3.org/1999/xlink' version='1.1' id='Layer_1' x='0px' y='0px' viewBox='0 0 310 310' xmlSpace='preserve'>
 								<g id='XMLID_801_'>
 									<path id='XMLID_802_' d='M72.16,99.73H9.927c-2.762,0-5,2.239-5,5v199.928c0,2.762,2.238,5,5,5H72.16c2.762,0,5-2.238,5-5V104.73   C77.16,101.969,74.922,99.73,72.16,99.73z' />
@@ -44,12 +44,15 @@ const Home: NextPage = () => (
 						</a>
 					</div>
 					<div className='inline-flex w-full mt-4 overflow-hidden rounded-lg shadow sm:w-auto sm:mx-2 sm:mt-0'>
-						<a href='#' className='group inline-flex items-center justify-center w-full px-5 py-3 text-base font-medium text-white transition-colors duration-150 transform sm:w-auto bg-gradient-to-r from-red-500 to-red-700 hover:from-red-400 hover:to-red-400'>
-							<svg className='transition-all delay-50 duration-300 rotate-0 group-hover:rotate-[360deg] w-6 h-6 mx-2 fill-current' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M21 2H6a2 2 0 0 0-2 2v3H2v2h2v2H2v2h2v2H2v2h2v3a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1zm-8 2.999c1.648 0 3 1.351 3 3A3.012 3.012 0 0 1 13 11c-1.647 0-3-1.353-3-3.001 0-1.649 1.353-3 3-3zM19 18H7v-.75c0-2.219 2.705-4.5 6-4.5s6 2.281 6 4.5V18z' /></svg>
-							<span className='mx-2'>
-								Contact
-							</span>
-						</a>
+						<NextLink href='/contact'>
+							<a className='group inline-flex items-center justify-center w-full px-5 py-3 text-base font-medium text-white transition-colors duration-150 transform sm:w-auto bg-gradient-to-r from-red-500 to-red-700 hover:from-red-400 hover:to-red-400'>
+								<svg className='transition-all delay-50 duration-300 rotate-0 group-hover:rotate-[360deg] w-6 h-6 mx-2 fill-current' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M21 2H6a2 2 0 0 0-2 2v3H2v2h2v2H2v2h2v2H2v2h2v3a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1zm-8 2.999c1.648 0 3 1.351 3 3A3.012 3.012 0 0 1 13 11c-1.647 0-3-1.353-3-3.001 0-1.649 1.353-3 3-3zM19 18H7v-.75c0-2.219 2.705-4.5 6-4.5s6 2.281 6 4.5V18z' /></svg>
+								<span className='mx-2'>
+									Contact
+								</span>
+							</a>
+						</NextLink>
+
 					</div>
 				</div>
 			</div>
@@ -73,9 +76,8 @@ const Home: NextPage = () => (
 			<div className='grid grid-cols-1 gap-8 mt-8 xl:mt-12 xl:gap-12 xl:grid-cols-3'>
 				<div className='p-8 space-y-3 border-2 border-red-400 dark:border-red-300 rounded-xl'>
 					<span className='inline-block text-red-500 dark:text-red-400'>
-						<svg xmlns='http://www.w3.org/2000/svg' className='w-8 h-8' fill='none' viewBox='0 0 24 24' stroke='currentColor'>
-							<path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M17.657 18.657A8 8 0 016.343 7.343S7 9 9 10c0-2 .5-5 2.986-7C14 5 16.09 5.777 17.656 7.343A7.975 7.975 0 0120 13a7.975 7.975 0 01-2.343 5.657z' />
-							<path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M9.879 16.121A3 3 0 1012.015 11L11 14H9c0 .768.293 1.536.879 2.121z' />
+						<svg xmlns='http://www.w3.org/2000/svg' className='w-8 h-8' viewBox='0 0 1024 1024' fill='currentColor'>
+							<path d='M990.848 696.304V438.16l16.096-8.496c10.464-5.44 17.055-16.225 17.183-28.032.128-11.777-6.256-22.689-16.592-28.368l-481.44-257.6c-9.631-5.28-21.28-5.249-30.976.095l-478.8 257.92C6.126 379.36-.177 390.143-.113 401.84s6.496 22.4 16.817 27.97l210.384 111.983c-2.64 4.656-4.272 9.968-4.272 15.696v270.784c0 9.12 3.905 17.84 10.72 23.904 6.945 6.16 73.441 60.096 276.753 60.096 202.592 0 270.88-50.976 278-56.784 7.44-6.064 11.744-15.152 11.744-24.784V552.976c0-4.496-.944-8.768-2.608-12.64l129.424-68.369V696.48c-18.976 11.104-31.84 31.472-31.84 55.024 0 35.344 28.656 64 64 64s64-28.656 64-64c0-23.697-13.04-44.145-32.16-55.2zM736.031 812.368c-25.152 12.096-91.712 35.904-225.744 35.904-134.88 0-199.936-25.344-223.472-37.536V573.6l207.808 110.624a31.896 31.896 0 0 0 15.184 3.84 31.675 31.675 0 0 0 14.816-3.664l211.408-111.664v239.632zM510.063 619.81l-411.6-218.561 412.32-220.976 413.6 220.336z' />
 						</svg>
 					</span>
 					<h1 className='text-2xl font-semibold text-gray-700 capitalize dark:text-white'>Education</h1>
@@ -90,8 +92,8 @@ const Home: NextPage = () => (
 				</div>
 				<div className='p-8 space-y-3 border-2 border-red-400 dark:border-red-300 rounded-xl'>
 					<span className='inline-block text-red-500 dark:text-red-400'>
-						<svg xmlns='http://www.w3.org/2000/svg' className='w-8 h-8' fill='none' viewBox='0 0 24 24' stroke='currentColor'>
-							<path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z' />
+						<svg className='w-8 h-8' xmlns='http://www.w3.org/2000/svg' xmlnsXlink='http://www.w3.org/1999/xlink' fill='currentColor' stroke='none' x='0px' y='0px' width='256px' height='209px' viewBox='0 0 256 209' enableBackground='new 0 0 256 209' xmlSpace='preserve'>
+							<path d='M246.125,195.063v-82.688h-63v82.688h-7.875V17.823h-23.625V2.125h-47.25v15.698H80.75v177.24h-7.875V80.875h-63v114.188H2  v11.813h252v-11.813H246.125z M47.281,177.344H35.469v-11.813h11.813V177.344z M47.281,145.844H35.469v-11.813h11.813V145.844z   M47.281,114.344H35.469v-11.813h11.813V114.344z M119.141,174.391h-11.813v-11.813h11.813V174.391z M119.141,142.891h-11.813  v-11.813h11.813V142.891z M119.141,111.391h-11.813V99.578h11.813V111.391z M119.141,79.891h-11.813V68.078h11.813V79.891z   M150.641,174.391h-11.813v-11.813h11.813V174.391z M150.641,142.891h-11.813v-11.813h11.813V142.891z M150.641,111.391h-11.813  V99.578h11.813V111.391z M150.641,79.891h-11.813V68.078h11.813V79.891z M220.531,177.344h-11.813v-11.813h11.813V177.344z   M220.531,145.844h-11.813v-11.813h11.813V145.844z' />
 						</svg>
 					</span>
 					<h1 className='text-2xl font-semibold text-gray-700 capitalize dark:text-white'>Experience</h1>
@@ -106,8 +108,16 @@ const Home: NextPage = () => (
 				</div>
 				<div className='p-8 space-y-3 border-2 border-red-400 dark:border-red-300 rounded-xl'>
 					<span className='inline-block text-red-500 dark:text-red-400'>
-						<svg xmlns='http://www.w3.org/2000/svg' className='w-8 h-8' fill='none' viewBox='0 0 24 24' stroke='currentColor'>
-							<path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z' />
+						<svg className='w-8 h-8' stroke='currentColor' fill='currentColor' xmlns='http://www.w3.org/2000/svg' xmlnsXlink='http://www.w3.org/1999/xlink' version='1.1' viewBox='0 0 231.087 231.087' enableBackground='new 0 0 231.087 231.087'>
+							<g>
+								<path d='m230.042,142.627c-1.871-2.744-5.612-3.452-8.355-1.581l-65.513,44.667-14.55-19.473c-1.526-2.036-4.241-2.977-6.788-2.129-3.185,1.06-4.908,4.501-3.848,7.686l11.908,35.785c0.45,1.33 1.184,2.645 2.18,3.757 3.94,4.401 10.702,4.776 15.104,0.836l.777-.695 68.129-60.985c2.216-1.981 2.676-5.346 0.956-7.868z' />
+								<path d='m120.211,190.676h-108.211v-162.49h158.43v124.823c0,3.313 2.687,6 6,6s6-2.687 6-6v-130.823c0-3.313-2.687-6-6-6h-170.43c-3.313,0-6,2.687-6,6v174.49c0,3.313 2.687,6 6,6h114.211c3.313,0 6-2.687 6-6 0-3.314-2.687-6-6-6z' />
+								<path d='m139.694,53.855h-96.959c-3.313,0-6,2.687-6,6s2.687,6 6,6h96.959c3.313,0 6-2.687 6-6s-2.686-6-6-6z' />
+								<path d='m139.694,79.79h-96.959c-3.313,0-6,2.687-6,6s2.687,6 6,6h96.959c3.313,0 6-2.687 6-6s-2.686-6-6-6z' />
+								<path d='m139.694,105.725h-96.959c-3.313,0-6,2.687-6,6s2.687,6 6,6h96.959c3.313,0 6-2.687 6-6s-2.686-6-6-6z' />
+								<path d='m145.694,137.659c0-3.313-2.687-6-6-6h-96.959c-3.313,0-6,2.687-6,6s2.687,6 6,6h96.959c3.314,0 6-2.686 6-6z' />
+								<path d='M42.735,156.329c-3.313,0-6,2.687-6,6s2.687,6,6,6h48.479c3.313,0,6-2.687,6-6s-2.687-6-6-6H42.735z' />
+							</g>
 						</svg>
 					</span>
 					<h1 className='text-2xl font-semibold text-gray-700 capitalize dark:text-white'>Projects</h1>
