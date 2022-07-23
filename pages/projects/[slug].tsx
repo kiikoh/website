@@ -1,6 +1,7 @@
 import process from 'node:process';
 import {Buffer} from 'node:buffer';
-import {NextPage, NextPageContext} from 'next';
+import {ParsedUrlQuery} from 'node:querystring';
+import {GetStaticPaths, GetStaticProps, NextPage, NextPageContext} from 'next';
 import {useRouter} from 'next/router';
 import {Octokit} from '@octokit/rest';
 import {useEffect, useState} from 'react';
@@ -26,25 +27,41 @@ const ProjectPage: NextPage<ProjectPageProps> = ({readme, project}: ProjectPageP
 	</>
 );
 
-export async function getServerSideProps(context: NextPageContext) {
+export const getStaticPaths: GetStaticPaths = () => {
+	const paths = projects.map(project => ({
+		params: {
+			slug: project.slug,
+		},
+	}));
+
+	return {
+		paths,
+		fallback: false,
+	};
+};
+
+export const getStaticProps: GetStaticProps = async ({params}) => {
 	const octokit = new Octokit({auth: process.env.GITHUB_PAT});
-	const project = projects.find(p => p.slug === context.query.slug);
+
+	const project = projects.find(p => p.slug === params!.slug);
 
 	if (!project) {
-		throw new Error('Project Not Found');
+		throw new Error("Project not found");
 	}
 
 	const [owner, repo] = project.github[0].split('/');
 
-	const readmeResponse = await octokit.rest.repos.getReadme({owner, repo});
-	const readme = Buffer.from(readmeResponse.data.content, 'base64').toString();
+	const readme = await octokit.rest.repos.getReadme({owner, repo})
+		.then(response => Buffer.from(response.data.content, 'base64').toString('utf8'))
+		.catch(() => ('### README.md not found for ' + project.name));
 
 	return {
 		props: {
 			readme,
 			project,
 		},
+		revalidate: 60 * 60,
 	};
-}
+};
 
 export default ProjectPage;
