@@ -59,7 +59,7 @@ const Home: NextPage = () => (
 		</div>
 		{/* TODO: ADD LIGHT MODE HERE */}
 		<div className='flex flex-col items-center px-4 py-12 mx-auto xl:flex-row'>
-			<blockquote className='flex flex-col items-center justify-center px-4 py-12 mx-auto text-center text-gray-700 dark:text-gray-300 bg-gray-900'>
+			<blockquote className='flex flex-col items-center justify-center px-4 py-12 mx-auto text-center text-gray-700 dark:text-gray-300 bg-gray-200 dark:bg-gray-900'>
 				<p className='text-xl font-semibold px-4'>
 					I am a Software Developer with a demonstrated history of problem solving and learning new skills. Skilled in React, Javascript, Java,
 					MongoDB & other technologies that make the web functional. I am constantly seeking to learn something new.

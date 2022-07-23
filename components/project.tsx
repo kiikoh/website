@@ -1,9 +1,9 @@
 import Image from 'next/image';
 import NextLink from 'next/link';
 import type {NextPage} from 'next';
-import type {ProjectType} from '../data/projects';
+import type {Project} from '../data/projects';
 
-const project: NextPage<ProjectType> = ({name, slug, description, category}: ProjectType) => (
+const project: NextPage<Project> = ({name, slug, description, category}: Project) => (
 	<div key={slug} className='max-w-2xl w-full mx-auto overflow-hidden bg-white rounded-lg shadow-md dark:bg-gray-600'>
 		<div className='object-cover w-full h-64 relative'>
 			<Image src='https://images.unsplash.com/photo-1550439062-609e1531270e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60' alt='Article' layout='fill' />
