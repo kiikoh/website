@@ -5,13 +5,16 @@ import {Octokit} from '@octokit/rest';
 import ReactMarkdown from 'react-markdown';
 import Head from 'next/head';
 import projects, {Project} from '../../data/projects';
+import GithubButton from '../../components/github-button';
+import DemoButton from '../../components/demo-button';
 
 interface ProjectPageProps {
 	project: Project;
 	readme: string;
+	stars: number;
 }
 
-const ProjectPage: NextPage<ProjectPageProps> = ({readme, project}: ProjectPageProps) => (
+const ProjectPage: NextPage<ProjectPageProps> = ({readme, project, stars}: ProjectPageProps) => (
 	<>
 		<Head>
 			{/* TODO add titles */}
@@ -21,8 +24,16 @@ const ProjectPage: NextPage<ProjectPageProps> = ({readme, project}: ProjectPageP
 			<div className='h-min md:col-span-2 md:sticky md:mt-64 md:top-64 bg-gray-50 dark:bg-gray-600 drop-shadow-xl rounded-md p-2'>
 				<div>Category: {project.category}</div>
 				<div>Technologies: {project.technologies.join(', ')}</div>
-				<div>GitHub: {project.github}</div>
-				<div>View the site live: {project.demo}</div>
+				<div className='w-full'>
+					{project.github.map(gh => {
+						const [owner, repo] = gh.split('/');
+
+						return (
+							<GithubButton key={`${owner}/${repo}`} stars={stars} owner={owner} repo={repo} />
+						);
+					})}
+				</div>
+				<DemoButton url={project.demo}>View the site live</DemoButton>
 			</div>
 			<div className='p-2 mx-auto prose prose-lg dark:prose-invert md:col-span-5'>
 				<ReactMarkdown>{readme}</ReactMarkdown>
@@ -59,10 +70,15 @@ export const getStaticProps: GetStaticProps = async ({params}) => {
 		.then(response => Buffer.from(response.data.content, 'base64').toString('utf8'))
 		.catch(() => ('### README.md not found for ' + project.name));
 
+	const stars = await octokit.repos.get({owner, repo})
+		.then(response => response.data.stargazers_count)
+		.catch(() => 0);
+
 	return {
 		props: {
 			readme,
 			project,
+			stars,
 		},
 		revalidate: 60 * 60,
 	};
