@@ -33,7 +33,7 @@ const ProjectPage: NextPage<ProjectPageProps> = ({readme, project, stars}: Proje
 						);
 					})}
 				</div>
-				<DemoButton url={project.demo}>View the site live</DemoButton>
+				{project.demo && <DemoButton url={project.demo}>View the site live</DemoButton>}
 			</div>
 			<div className='p-2 mx-auto prose prose-lg dark:prose-invert md:col-span-5'>
 				<ReactMarkdown>{readme}</ReactMarkdown>
