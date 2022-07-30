@@ -52,12 +52,10 @@ const Home: NextPage = () => (
 								</span>
 							</a>
 						</NextLink>
-
 					</div>
 				</div>
 			</div>
 		</div>
-		{/* TODO: ADD LIGHT MODE HERE */}
 		<div className='flex flex-col items-center px-4 py-12 mx-auto xl:flex-row'>
 			<blockquote className='flex flex-col items-center justify-center px-4 py-12 mx-auto text-center text-gray-700 dark:text-gray-300 bg-gray-200 dark:bg-gray-900'>
 				<p className='text-xl font-semibold px-4'>
@@ -134,7 +132,6 @@ const Home: NextPage = () => (
 				</div>
 			</div>
 		</div>
-
 	</>
 );
 

@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import Navbar from './navbar';
+import Transition from './page-transition';
 
 interface LayoutProps {
 	children: React.ReactNode;
@@ -13,9 +14,12 @@ const Layout: React.FC<LayoutProps> = ({children}: LayoutProps) => (
 			<link rel='icon' href='/favicon.ico' />
 		</Head>
 		<Navbar />
-		<div className='container mx-auto bg-gray-100 dark:bg-gray-700 min-h-screen m-4 p-8 shadow-lg rounded-lg'>
-			{children}
-		</div>
+		<Transition>
+			<div className='container mx-auto bg-gray-100 dark:bg-gray-700 min-h-screen m-4 p-8 shadow-lg rounded-lg'>
+				{children}
+			</div>
+		</Transition>
+
 	</div>
 );
 
