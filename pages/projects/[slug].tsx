@@ -20,8 +20,8 @@ const ProjectPage: NextPage<ProjectPageProps> = ({readme, project, stars}: Proje
 			{/* TODO add titles */}
 			<title>{project.name}</title>
 		</Head>
-		<div className='grid md:grid-cols-7 pt-4'>
-			<div className='h-min md:col-span-2 md:sticky md:mt-64 md:top-64 bg-gray-50 dark:bg-gray-600 drop-shadow-xl rounded-md p-2'>
+		<div className='grid pt-4 md:grid-cols-7'>
+			<div className='h-min rounded-md bg-gray-50 p-2 drop-shadow-xl dark:bg-gray-600 md:sticky md:top-64 md:col-span-2 md:mt-64'>
 				<div>Category: {project.category}</div>
 				<div>Technologies: {project.technologies.join(', ')}</div>
 				<div className='w-full'>
@@ -35,7 +35,7 @@ const ProjectPage: NextPage<ProjectPageProps> = ({readme, project, stars}: Proje
 				</div>
 				{project.demo && <DemoButton url={project.demo}>View the site live</DemoButton>}
 			</div>
-			<div className='p-2 mx-auto prose prose-lg dark:prose-invert md:col-span-5'>
+			<div className='prose-lg prose mx-auto p-2 dark:prose-invert md:col-span-5'>
 				<ReactMarkdown>{readme}</ReactMarkdown>
 			</div>
 		</div>

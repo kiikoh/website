@@ -15,7 +15,7 @@ const Layout: React.FC<LayoutProps> = ({children}: LayoutProps) => (
 		</Head>
 		<Navbar />
 		<Transition>
-			<div className='container mx-auto bg-gray-100 dark:bg-gray-700 min-h-screen m-4 p-8 shadow-lg rounded-lg'>
+			<div className='container m-4 mx-auto min-h-screen rounded-lg bg-gray-100 p-8 shadow-lg dark:bg-gray-700'>
 				{children}
 			</div>
 		</Transition>

@@ -1,44 +1,63 @@
 import {useState} from 'react';
 import clsx from 'clsx';
 import NextLink from 'next/link';
+import {useRouter} from 'next/router';
+import {motion} from 'framer-motion';
 import ThemeSwitch from './theme-switch';
+import NavLink from './navlink';
+
+const links = [
+	{href: '/', name: 'Home'},
+	{href: '/projects', name: 'Projects'},
+	{href: '/contact', name: 'Contact'},
+];
 
 const Navbar: React.FC = () => {
 	const [isOpen, setIsOpen] = useState(false);
+	const {pathname} = useRouter();
 
 	return (
-		<nav className='bg-white shadow-lg shadow-red-500 dark:shadow-red-400 dark:bg-gray-800 w-full'>
-			<div className='container px-6 py-3 mx-auto md:flex'>
+		<nav className='w-full bg-white shadow-lg shadow-red-500 dark:bg-gray-800 dark:shadow-red-400'>
+			<div className='container mx-auto px-6 py-3 md:flex'>
 				<div className='flex items-center justify-between'>
 					<div>
 						<NextLink href='/'>
-							<a className='text-2xl font-bold text-gray-800 transition-colors duration-200 transform dark:text-white lg:text-3xl hover:text-gray-700 dark:hover:text-gray-300' href='#'>KiiKoh</a>
+							<a
+								className='text-2xl font-bold text-gray-800 transition-colors duration-200 hover:text-gray-700 dark:text-white dark:hover:text-gray-300 lg:text-3xl'
+								onClick={() => {
+									setIsOpen(false);
+								}}
+							>
+								KiiKoh
+							</a>
 						</NextLink>
 					</div>
 					{/* Mobile menu button */}
 					<div className='flex md:hidden'>
-						<button type='button' className='text-gray-500 dark:text-gray-200 hover:text-gray-600 dark:hover:text-gray-400 focus:outline-none focus:text-gray-600 dark:focus:text-gray-400' aria-label='toggle menu' onClick={() => {
+						<button type='button' className='text-gray-500 hover:text-gray-600 focus:text-gray-600 focus:outline-none dark:text-gray-200 dark:hover:text-gray-400 dark:focus:text-gray-400' aria-label='toggle menu' onClick={() => {
 							setIsOpen(!isOpen);
 						}}
 						>
-							<svg viewBox='0 0 24 24' className='w-6 h-6 fill-current'>
+							<svg viewBox='0 0 24 24' className='h-6 w-6 fill-current'>
 								<path fillRule='evenodd' d='M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z' />
 							</svg>
 						</button>
 					</div>
 				</div>
-				{/* Mobile Menu open: "block", Menu closed: "hidden" */}
-				<div className={clsx(['w-full md:flex md:items-center md:justify-between', !isOpen && 'hidden'])}>
-					<div className='flex flex-col px-2 py-3 -mx-4 md:flex-row md:mx-0 md:py-0'>
-						<NextLink href='/'>
-							<a className='px-2 py-1 text-sm font-medium text-gray-700 transition-colors duration-200 transform rounded dark:text-gray-200 hover:bg-gray-900 hover:text-gray-100 md:mx-2'>Home</a>
-						</NextLink>
-						<NextLink href='/projects'>
-							<a className='px-2 py-1 text-sm font-medium text-gray-700 transition-colors duration-200 transform rounded dark:text-gray-200 hover:bg-gray-900 hover:text-gray-100 md:mx-2'>Projects</a>
-						</NextLink>
-						<NextLink href='/contact'>
-							<a className='px-2 py-1 text-sm font-medium text-gray-700 transition-colors duration-200 transform rounded dark:text-gray-200 hover:bg-gray-900 hover:text-gray-100 md:mx-2'>Contact</a>
-						</NextLink>
+				<div className={
+					clsx([
+						'w-full transition-height duration-300 md:flex md:items-center md:justify-between',
+						isOpen ? 'h-36 scale-100' : 'h-0 scale-0',
+						'md:h-auto md:scale-100',
+					])
+				}
+				>
+					<div className='-mx-4 flex flex-col px-2 py-3 md:mx-0 md:flex-row md:py-0'>
+						{
+							links.map(({href, name}) => (
+								<NavLink key={href} href={href} name={name} setIsOpen={setIsOpen} active={pathname === href} />
+							))
+						}
 					</div>
 					<div className='relative'>
 						{/* <span className='absolute inset-y-0 left-0 flex items-center pl-3'>

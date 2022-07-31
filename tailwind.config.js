@@ -6,7 +6,11 @@ module.exports = {
 		'./components/**/*.{js,ts,jsx,tsx}',
 	],
 	theme: {
-		extend: {},
+		extend: {
+			transitionProperty: {
+				height: 'height',
+			},
+		},
 	},
 	plugins: [require('@tailwindcss/typography')],
 };

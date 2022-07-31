@@ -11,9 +11,9 @@ interface ProjectProps {
 const Projects: NextPage<ProjectProps> = (props: ProjectProps) => (
 	<>
 		<div>
-			<h1 className='text-4xl mb-8 text-red-600 dark:text-red-400'>Projects</h1>
+			<h1 className='mb-8 text-4xl text-red-600 dark:text-red-400'>Projects</h1>
 		</div>
-		<div className='grid md:grid-cols-2 lg:grid-cols-3 gap-3'>
+		<div className='grid gap-3 md:grid-cols-2 lg:grid-cols-3'>
 			{props.projects.map(project => (
 				<ProjectComponent {...project} key={project.slug} />
 			),
