@@ -16,8 +16,8 @@ const Home: NextPage = () => (
 				</h2>
 				<p className='mt-4 block max-w-2xl text-xl text-gray-500 dark:text-gray-300'>is a Computer-Science Major and Student-Athlete from Marist College, looking for work as a full-stack developer</p>
 				<div className='mt-6 sm:-mx-2'>
-					<div className='inline-flex w-full overflow-hidden rounded-lg shadow sm:mx-2 sm:w-auto'>
-						<a target='_blank' href='/KyleDePaceResume.pdf' className='group inline-flex w-full items-center justify-center bg-gradient-to-r from-gray-700 to-gray-900 px-5 py-3 text-base font-medium text-white hover:from-gray-600 hover:to-gray-600 sm:w-auto'>
+					<div className='inline-flex w-full overflow-hidden shadow sm:mx-2 sm:w-auto'>
+						<a target='_blank' href='/KyleDePaceResume.pdf' className='group inline-flex w-full items-center justify-center rounded-lg bg-gradient-to-r from-gray-700 to-gray-900 px-5 py-3 text-base font-medium text-white hover:from-gray-600 hover:to-gray-600 focus:border-2 sm:w-auto'>
 							<svg className='mx-2 h-6 w-6 -rotate-180 scale-x-[-1] fill-current  transition-all delay-75 duration-300 group-hover:rotate-180' xmlns='http://www.w3.org/2000/svg' xmlnsXlink='http://www.w3.org/1999/xlink' version='1.1' id='Capa_1' x='0px' y='0px' viewBox='0 0 325 325' xmlSpace='preserve'>
 								<g>
 									<path d='M275.291,0H49.709c-3.314,0-6,2.687-6,6v313c0,3.314,2.686,6,6,6h168.024v-59.075c0-4.418,3.582-8,8-8h55.558V6   C281.291,2.687,278.604,0,275.291,0z' />
@@ -29,8 +29,8 @@ const Home: NextPage = () => (
 							</span>
 						</a>
 					</div>
-					<div className='mt-4 inline-flex w-full overflow-hidden rounded-lg shadow sm:mx-2 sm:w-auto'>
-						<a target='_blank' href='https://www.linkedin.com/in/kyledepace/' className='group inline-flex w-full items-center justify-center bg-gradient-to-r from-gray-700 to-gray-900 px-5 py-3 text-base font-medium text-white hover:from-gray-600 hover:to-gray-600 sm:w-auto' rel='noreferrer'>
+					<div className='mt-4 inline-flex w-full overflow-hidden shadow sm:mx-2 sm:w-auto'>
+						<a target='_blank' href='https://www.linkedin.com/in/kyledepace/' className='group inline-flex w-full items-center justify-center rounded-lg bg-gradient-to-r from-gray-700 to-gray-900 px-5 py-3 text-base font-medium text-white hover:from-gray-600 hover:to-gray-600 focus:border-2 sm:w-auto' rel='noreferrer'>
 							<svg className='mx-2 h-6 w-6 rotate-0 fill-current transition-all delay-75 duration-300 group-hover:rotate-[360deg]' xmlns='http://www.w3.org/2000/svg' xmlnsXlink='http://www.w3.org/1999/xlink' version='1.1' id='Layer_1' x='0px' y='0px' viewBox='0 0 310 310' xmlSpace='preserve'>
 								<g id='XMLID_801_'>
 									<path id='XMLID_802_' d='M72.16,99.73H9.927c-2.762,0-5,2.239-5,5v199.928c0,2.762,2.238,5,5,5H72.16c2.762,0,5-2.238,5-5V104.73   C77.16,101.969,74.922,99.73,72.16,99.73z' />
@@ -43,9 +43,9 @@ const Home: NextPage = () => (
 							</span>
 						</a>
 					</div>
-					<div className='mt-4 inline-flex w-full overflow-hidden rounded-lg shadow sm:mx-2 sm:mt-0 sm:w-auto'>
+					<div className='mt-4 inline-flex w-full overflow-hidden shadow sm:mx-2 sm:mt-0 sm:w-auto'>
 						<NextLink href='/contact'>
-							<a className='group inline-flex w-full items-center justify-center bg-gradient-to-r from-red-500 to-red-700 px-5 py-3 text-base font-medium text-white transition-colors duration-150 hover:from-red-400 hover:to-red-400 sm:w-auto'>
+							<a className='group inline-flex w-full items-center justify-center rounded-lg bg-gradient-to-r from-red-500 to-red-700 px-5 py-3 text-base font-medium text-white transition-colors duration-150 hover:from-red-400 hover:to-red-400 focus:border-2 sm:w-auto'>
 								<svg className='mx-2 h-6 w-6 rotate-0 fill-current transition-all delay-75 duration-300 group-hover:rotate-[360deg]' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M21 2H6a2 2 0 0 0-2 2v3H2v2h2v2H2v2h2v2H2v2h2v3a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1zm-8 2.999c1.648 0 3 1.351 3 3A3.012 3.012 0 0 1 13 11c-1.647 0-3-1.353-3-3.001 0-1.649 1.353-3 3-3zM19 18H7v-.75c0-2.219 2.705-4.5 6-4.5s6 2.281 6 4.5V18z' /></svg>
 								<span className='mx-2'>
 									Contact
