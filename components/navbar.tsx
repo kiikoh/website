@@ -55,7 +55,7 @@ const Navbar: React.FC = () => {
 					<div className='-mx-4 flex flex-col px-2 py-3 md:mx-0 md:flex-row md:py-0'>
 						{
 							links.map(({href, name}) => (
-								<NavLink key={href} href={href} name={name} setIsOpen={setIsOpen} active={pathname === href} />
+								<NavLink key={href} href={href} name={name} setIsOpen={setIsOpen} active={pathname.split('/')[1] === href.split('/')[1]} />
 							))
 						}
 					</div>

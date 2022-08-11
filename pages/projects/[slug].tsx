@@ -4,6 +4,7 @@ import {GetStaticPaths, GetStaticProps, NextPage, NextPageContext} from 'next';
 import {Octokit} from '@octokit/rest';
 import ReactMarkdown from 'react-markdown';
 import Head from 'next/head';
+import Image from 'next/image';
 import projects, {Project} from '../../data/projects';
 import GithubButton from '../../components/github-button';
 import DemoButton from '../../components/demo-button';
@@ -12,9 +13,10 @@ interface ProjectPageProps {
 	project: Project;
 	readme: string;
 	stars: number;
+	isPrivate: boolean;
 }
 
-const ProjectPage: NextPage<ProjectPageProps> = ({readme, project, stars}: ProjectPageProps) => (
+const ProjectPage: NextPage<ProjectPageProps> = ({readme, project, stars, isPrivate}: ProjectPageProps) => (
 	<>
 		<Head>
 			{/* TODO add titles */}
@@ -29,14 +31,26 @@ const ProjectPage: NextPage<ProjectPageProps> = ({readme, project, stars}: Proje
 						const [owner, repo] = gh.split('/');
 
 						return (
-							<GithubButton key={`${owner}/${repo}`} stars={stars} owner={owner} repo={repo} />
+							<GithubButton key={`${owner}/${repo}`} isPrivate={isPrivate} stars={stars} owner={owner} repo={repo} />
 						);
 					})}
 				</div>
 				{project.demo && <DemoButton url={project.demo}>View the site live</DemoButton>}
 			</div>
 			<div className='prose-lg prose mx-auto p-2 dark:prose-invert md:col-span-5'>
-				<ReactMarkdown>{readme}</ReactMarkdown>
+				<ReactMarkdown components={
+					{
+						img(props: {src?: string; alt?: string}) {
+							if (!props.src) {
+								return null;
+							}
+
+							return <Image src={props.src} alt={props.alt} width={768} height={480} />;
+						}}
+				}
+				>
+					{readme}
+				</ReactMarkdown>
 			</div>
 		</div>
 	</>
@@ -70,15 +84,16 @@ export const getStaticProps: GetStaticProps = async ({params}) => {
 		.then(response => Buffer.from(response.data.content, 'base64').toString('utf8'))
 		.catch(() => ('### README.md not found for ' + project.name));
 
-	const stars = await octokit.repos.get({owner, repo})
-		.then(response => response.data.stargazers_count)
-		.catch(() => 0);
+	const [stars, isPrivate] = await octokit.repos.get({owner, repo})
+		.then(response => [response.data.stargazers_count, Boolean(response.data.private)])
+		.catch(() => [0, true]);
 
 	return {
 		props: {
 			readme,
 			project,
 			stars,
+			isPrivate,
 		},
 		revalidate: 60 * 60,
 	};

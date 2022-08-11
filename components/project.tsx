@@ -3,10 +3,10 @@ import NextLink from 'next/link';
 import type {NextPage} from 'next';
 import type {Project} from '../data/projects';
 
-const project: NextPage<Project> = ({name, slug, description, category}: Project) => (
+const project: NextPage<Project> = ({name, slug, description, category, image}: Project) => (
 	<div key={slug} className='mx-auto w-full max-w-2xl overflow-hidden rounded-lg bg-white shadow-md dark:bg-gray-600'>
-		<div className='relative h-64 w-full object-cover'>
-			<Image src='https://images.unsplash.com/photo-1550439062-609e1531270e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60' alt='Article' layout='fill' />
+		<div className='relative w-full object-cover'>
+			<Image src={image} alt='Article' width='100%' height='75%' layout='responsive' />
 		</div>
 		<div className='p-6'>
 			<div>
