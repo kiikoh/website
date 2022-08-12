@@ -7,7 +7,7 @@ const Home: NextPage = () => (
 		<div className='mx-auto flex flex-col items-center px-4 py-12 xl:flex-row'>
 			<div className='flex justify-center xl:w-1/2'>
 				<div className='relative h-80 w-80 shrink-0 object-cover sm:h-[28rem] sm:w-[28rem]'>
-					<Image priority layout='fill' className='rounded-full' src='/img/professional.jpg' alt='' />
+					<Image priority placeholder='blur' layout='fill' className='rounded-full' src='/img/professional.jpg' alt='' />
 				</div>
 			</div>
 			<div className='mt-6 flex flex-col items-center xl:mt-0 xl:w-1/2 xl:items-start'>

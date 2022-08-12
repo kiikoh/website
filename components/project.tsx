@@ -6,7 +6,7 @@ import type {Project} from '../data/projects';
 const project: NextPage<Project> = ({name, slug, description, category, image}: Project) => (
 	<div key={slug} className='mx-auto w-full max-w-2xl overflow-hidden rounded-lg bg-white shadow-md dark:bg-gray-600'>
 		<div className='relative w-full object-cover'>
-			<Image src={image} alt='Article' sizes='50vw' width='100%' height='75%' layout='responsive' />
+			<Image src={image} alt={name} placeholder='blur' sizes='50vw' width='100%' height='75%' layout='responsive' />
 		</div>
 		<div className='p-6'>
 			<div className='h-32'>

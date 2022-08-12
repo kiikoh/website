@@ -88,22 +88,22 @@ const projects: Project[] = [
 		slug: 'whoop2csv',
 		name: 'Whoop2CSV',
 		description: 'Tiny node program to extract data from a Whoop API and save it to a CSV file for further analysis.',
-		image: '/images/nextjs.png',
+		image: '/img/projects/whoop2csv.png',
 		technologies: ['Node'],
 		github: ['kiikoh/Whoop2CSV'],
 		demo: '',
 		category: 'Project',
 	},
-	{
-		slug: 'meal-deals',
-		name: 'Meal Deals',
-		description: 'Node.js program to calcualate the optimal dining hall plan for the Marist College dining hall',
-		image: '/images/nextjs.png',
-		technologies: ['Node', 'JavaScript'],
-		github: ['kiikoh/MealDeals'],
-		demo: 'https://repl.it/@kiikoh/MealDeals#index.js',
-		category: 'Project',
-	},
+	// {
+	// 	slug: 'meal-deals',
+	// 	name: 'Meal Deals',
+	// 	description: 'Node.js program to calcualate the optimal dining hall plan for the Marist College dining hall',
+	// 	image: '/images/nextjs.png',
+	// 	technologies: ['Node', 'JavaScript'],
+	// 	github: ['kiikoh/MealDeals'],
+	// 	demo: 'https://repl.it/@kiikoh/MealDeals#index.js',
+	// 	category: 'Project',
+	// },
 ];
 
 export default projects;
