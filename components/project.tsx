@@ -6,10 +6,10 @@ import type {Project} from '../data/projects';
 const project: NextPage<Project> = ({name, slug, description, category, image}: Project) => (
 	<div key={slug} className='mx-auto w-full max-w-2xl overflow-hidden rounded-lg bg-white shadow-md dark:bg-gray-600'>
 		<div className='relative w-full object-cover'>
-			<Image src={image} alt='Article' width='100%' height='75%' layout='responsive' />
+			<Image src={image} alt='Article' sizes='50vw' width='100%' height='75%' layout='responsive' />
 		</div>
 		<div className='p-6'>
-			<div>
+			<div className='h-32'>
 				<span className='text-xs font-medium uppercase text-red-600 dark:text-red-400'>{category}</span>
 				<NextLink href={`/projects/${slug}`}>
 					<a href='#' className='mt-2 block text-2xl font-semibold text-gray-800 transition-colors duration-200 hover:text-gray-600 hover:underline dark:text-white dark:hover:text-gray-400'>{name}</a>
@@ -21,7 +21,7 @@ const project: NextPage<Project> = ({name, slug, description, category, image}: 
 				<div className='flex items-center'>
 					<div className='flex w-full items-center'>
 						<div className='relative h-10 w-10 object-cover'>
-							<Image className='rounded-full' layout='fill' src='/img/professional.jpg' alt='Avatar' />
+							<Image className='rounded-full' layout='fill' sizes='10vw' src='/img/professional.jpg' alt='Avatar' />
 						</div>
 						<div className='mx-2 font-semibold text-gray-700 dark:text-gray-200'>Kyle DePace</div>
 					</div>
