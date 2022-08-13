@@ -2,11 +2,12 @@ import Image from 'next/image';
 import NextLink from 'next/link';
 import type {NextPage} from 'next';
 import type {Project} from '../data/projects';
+import professional from '../public/img/professional.jpg';
 
 const project: NextPage<Project> = ({name, slug, description, category, image}: Project) => (
 	<div key={slug} className='mx-auto w-full max-w-2xl overflow-hidden rounded-lg bg-white shadow-md dark:bg-gray-600'>
 		<div className='relative w-full object-cover'>
-			<Image src={image} alt={name} placeholder='blur' sizes='50vw' width='100%' height='75%' layout='responsive' />
+			<Image src={image} alt={name} sizes='50vw' width='100%' height='75%' layout='responsive' />
 		</div>
 		<div className='p-6'>
 			<div className='h-32'>
@@ -21,7 +22,7 @@ const project: NextPage<Project> = ({name, slug, description, category, image}: 
 				<div className='flex items-center'>
 					<div className='flex w-full items-center'>
 						<div className='relative h-10 w-10 object-cover'>
-							<Image className='rounded-full' layout='fill' sizes='10vw' src='/img/professional.jpg' alt='Avatar' />
+							<Image className='rounded-full' layout='fill' sizes='10vw' src={professional} alt='Avatar' />
 						</div>
 						<div className='mx-2 font-semibold text-gray-700 dark:text-gray-200'>Kyle DePace</div>
 					</div>

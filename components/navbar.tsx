@@ -28,7 +28,7 @@ const Navbar: React.FC = () => {
 									setIsOpen(false);
 								}}
 							>
-								KiiKoh
+								DePace
 							</a>
 						</NextLink>
 					</div>

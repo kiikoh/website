@@ -12,6 +12,7 @@
   "dependencies": {
     "@octokit/rest": "^19.0.3",
     "@octokit/types": "^6.40.0",
+    "@sendgrid/mail": "^7.7.0",
     "clsx": "^1.1.1",
     "dayjs": "^1.11.3",
     "framer-motion": "^6.5.1",
@@ -21,7 +22,8 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-markdown": "^8.0.3",
-    "sharp": "^0.30.7"
+    "sharp": "^0.30.7",
+    "zod": "^3.18.0"
   },
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.4",
