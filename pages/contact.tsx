@@ -4,7 +4,7 @@ const Contact: NextPage = () => (
 	<div>
 		<h1>Contact</h1>
 		<p>
-			kyle.depace1@marist.edu
+			kyle@depace.dev
 		</p>
 	</div>
 );

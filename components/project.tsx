@@ -1,32 +1,40 @@
 import Image from 'next/image';
 import NextLink from 'next/link';
 import type {NextPage} from 'next';
+import {motion} from 'framer-motion';
 import type {Project} from '../data/projects';
 import professional from '../public/img/professional.jpg';
 
 const project: NextPage<Project> = ({name, slug, description, category, image}: Project) => (
-	<div key={slug} className='mx-auto w-full max-w-2xl overflow-hidden rounded-lg bg-white shadow-md dark:bg-gray-600'>
-		<div className='relative w-full object-cover'>
+	<motion.div
+		key={slug}
+		variants={{
+			hidden: {opacity: 0},
+			show: {opacity: 1},
+		}}
+		className='w-full max-w-2xl mx-auto overflow-hidden bg-white rounded-lg shadow-md dark:bg-gray-600'
+	>
+		<div className='relative object-cover w-full'>
 			<Image src={image} alt={name} sizes='50vw' width='100%' height='75%' layout='responsive' />
 		</div>
 		<div className='p-6'>
 			<div className='h-32'>
-				<span className='text-xs font-medium uppercase text-red-600 dark:text-red-400'>{category}</span>
+				<span className='text-xs font-medium text-red-600 uppercase dark:text-red-400'>{category}</span>
 				<NextLink href={`/projects/${slug}`}>
-					<a href='#' className='mt-2 block text-2xl font-semibold text-gray-800 transition-colors duration-200 hover:text-gray-600 hover:underline dark:text-white dark:hover:text-gray-400'>{name}</a>
+					<a href='#' className='block mt-2 text-2xl font-semibold text-gray-800 transition-colors duration-200 hover:text-gray-600 hover:underline dark:text-white dark:hover:text-gray-400'>{name}</a>
 				</NextLink>
 				<p className='mt-2 text-sm text-gray-600 dark:text-gray-400'>{description}</p>
 			</div>
 
 			<div className='mt-4'>
 				<div className='flex items-center'>
-					<div className='flex w-full items-center'>
-						<div className='relative h-10 w-10 object-cover'>
+					<div className='flex items-center w-full'>
+						<div className='relative object-cover w-10 h-10'>
 							<Image className='rounded-full' layout='fill' sizes='10vw' src={professional} alt='Avatar' />
 						</div>
 						<div className='mx-2 font-semibold text-gray-700 dark:text-gray-200'>Kyle DePace</div>
 					</div>
-					<span className='mx-1 w-full text-right text-xs text-gray-600 dark:text-gray-300'>21 SEP 2015</span>
+					<span className='w-full mx-1 text-xs text-right text-gray-600 dark:text-gray-300'>21 SEP 2015</span>
 				</div>
 			</div>
 			{/* <div className='space-y-2 sm:space-y-0 sm:flex sm:-mx-1'>
@@ -57,7 +65,7 @@ const project: NextPage<Project> = ({name, slug, description, category, image}: 
 				</button>
 			</div> */}
 		</div>
-	</div>
+	</motion.div>
 );
 
 export default project;
