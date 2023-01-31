@@ -15,7 +15,7 @@ const Home: NextPage = () => (
 				<h2 className='text-3xl font-bold tracking-tight text-gray-800 dark:text-white xl:text-4xl'>
 					Kyle DePace
 				</h2>
-				<p className='mt-4 block max-w-2xl text-xl text-gray-500 dark:text-gray-300'>is a Computer-Science Major and Student-Athlete from Marist College, looking for work as a full-stack developer</p>
+				<p className='mt-4 block max-w-2xl text-xl text-gray-500 dark:text-gray-300'>is a Computer-Science Major and Student-Athlete from Marist College, joining Prudential after college</p>
 				<div className='mt-6 sm:-mx-2'>
 					<div className='inline-flex w-full overflow-hidden shadow sm:mx-2 sm:w-auto'>
 						<a target='_blank' href='/KyleDePaceResume.pdf' className='group inline-flex w-full items-center justify-center rounded-lg bg-gradient-to-r from-gray-700 to-gray-900 px-5 py-3 text-base font-medium text-white hover:from-gray-600 hover:to-gray-600 focus:border-2 sm:w-auto'>
@@ -60,17 +60,14 @@ const Home: NextPage = () => (
 		<div className='mx-auto flex flex-col items-center px-4 py-12 xl:flex-row'>
 			<blockquote className='mx-auto flex flex-col items-center justify-center bg-gray-200 px-4 py-12 text-center text-gray-700 dark:bg-gray-900 dark:text-gray-300'>
 				<p className='px-4 text-xl font-semibold'>
-					I am a Software Developer with a demonstrated history of problem solving and learning new skills. Skilled in React, Javascript, Java,
-					MongoDB & other technologies that make the web functional. I am constantly seeking to learn something new.
-					Always on the lookout for opportunities to develop and improve my technical skill set and work ethic. Passionate
-					about technology, coding, fitness, and giving back through my community
+				As a passionate software developer, I am always eager to experiment with new technologies and explore the latest and greatest in the tech industry. My background as a student athlete at Marist College, where I rowed, has honed my determination and hard work, which I bring to my work as a developer. My love for new technologies and my drive to succeed make me a dynamic and innovative professional who is always pushing the boundaries. With a strong work ethic and a focus on growth, I strive to make a positive impact through my work and continue to develop my skills as a software developer.
 				</p>
 			</blockquote>
 		</div>
 		<div className='container mx-auto px-6 py-10'>
 			<h1 className='text-3xl font-semibold capitalize text-gray-800 dark:text-white lg:text-4xl'>Learn about <br /> my <span className='underline decoration-red-500'>background</span></h1>
 			<p className='mt-4 text-gray-500 dark:text-gray-300 xl:mt-6'>
-				Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nostrum quam voluptatibus
+				Quick Facts
 			</p>
 			<div className='mt-8 grid grid-cols-1 gap-8 xl:mt-12 xl:grid-cols-3 xl:gap-12'>
 				<div className='space-y-3 rounded-xl border-2 border-red-400 p-8 dark:border-red-300'>
@@ -83,11 +80,11 @@ const Home: NextPage = () => (
 					<p className='text-gray-500 dark:text-gray-300'>
 						Class of &apos;23 from Marist College, B.S. in Computer Science, summa cum laude. <br />Minors in IT, IS, Data Science and Cybersecurity
 					</p>
-					<a href='#' className='inline-flex rounded-full bg-red-100 p-2 capitalize text-red-500 transition-colors duration-200 hover:text-red-600 hover:underline dark:bg-red-500 dark:text-white dark:hover:text-red-500'>
+					{/* <a href='#' className='inline-flex rounded-full bg-red-100 p-2 capitalize text-red-500 transition-colors duration-200 hover:text-red-600 hover:underline dark:bg-red-500 dark:text-white dark:hover:text-red-500'>
 						<svg xmlns='http://www.w3.org/2000/svg' className='h-6 w-6' fill='none' viewBox='0 0 24 24' stroke='currentColor'>
 							<path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M13 9l3 3m0 0l-3 3m3-3H8m13 0a9 9 0 11-18 0 9 9 0 0118 0z' />
 						</svg>
-					</a>
+					</a> */}
 				</div>
 				<div className='space-y-3 rounded-xl border-2 border-red-400 p-8 dark:border-red-300'>
 					<span className='inline-block text-red-500 dark:text-red-400'>
@@ -99,11 +96,11 @@ const Home: NextPage = () => (
 					<p className='text-gray-500 dark:text-gray-300'>
 						Interned 3 years at Prudential Financial under Global Technology learning AWS, NodeJS, Express, Kafka, Splunk, Agile Methodologies, Java, Spring Boot and more.
 					</p>
-					<a href='#' className='inline-flex rounded-full bg-red-100 p-2 capitalize text-red-500 transition-colors duration-200 hover:text-red-600 hover:underline dark:bg-red-500 dark:text-white dark:hover:text-red-500'>
+					{/* <a href='#' className='inline-flex rounded-full bg-red-100 p-2 capitalize text-red-500 transition-colors duration-200 hover:text-red-600 hover:underline dark:bg-red-500 dark:text-white dark:hover:text-red-500'>
 						<svg xmlns='http://www.w3.org/2000/svg' className='h-6 w-6' fill='none' viewBox='0 0 24 24' stroke='currentColor'>
 							<path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M13 9l3 3m0 0l-3 3m3-3H8m13 0a9 9 0 11-18 0 9 9 0 0118 0z' />
 						</svg>
-					</a>
+					</a> */}
 				</div>
 				<div className='space-y-3 rounded-xl border-2 border-red-400 p-8 dark:border-red-300'>
 					<span className='inline-block text-red-500 dark:text-red-400'>
